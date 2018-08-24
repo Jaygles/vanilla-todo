@@ -10,7 +10,6 @@ function createTodo(text) {
 
   const todoCheck = document.createElement('input');
   todoCheck.type = 'checkbox';
-
   todoCheck.addEventListener('click', function() {
     if (todoDiv.classList.contains('checked')) {
       todoDiv.classList.remove('checked');
@@ -28,7 +27,9 @@ function createTodo(text) {
 const createTodoBtn = document.getElementById('create-todo-btn');
 createTodoBtn.addEventListener('click', function(event) {
   event.preventDefault();
-  let todoText = document.getElementById('todoText').value;
-  todoText += '';
+  const todoText = document.getElementById('todoText').value;
+  if (todoText.trim() === '') {
+    return;
+  }
   createTodo(todoText);
 });
