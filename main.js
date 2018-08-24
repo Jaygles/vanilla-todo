@@ -27,9 +27,11 @@ function createTodo(text) {
 const createTodoBtn = document.getElementById('create-todo-btn');
 createTodoBtn.addEventListener('click', function(event) {
   event.preventDefault();
-  const todoText = document.getElementById('todoText').value;
-  if (todoText.trim() === '') {
+  const todoText = document.getElementById('todoText');
+  const todoTextValue = todoText.value;
+  if (todoTextValue.trim() === '') {
     return;
   }
-  createTodo(todoText);
+  createTodo(todoTextValue);
+  todoText.value = '';
 });
