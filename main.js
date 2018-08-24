@@ -10,6 +10,7 @@ function createTodo(text) {
 
   const todoCheck = document.createElement('input');
   todoCheck.type = 'checkbox';
+  todoCheck.className = 'todo-checkbox';
   todoCheck.addEventListener('click', function() {
     if (todoDiv.classList.contains('checked')) {
       todoDiv.classList.remove('checked');
